@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>animation-duration 属性</title>
+    <style type="text/css">
+        div{
+            margin:0 auto;
+			width:100px;
+            height:100px;
+			border-radius:50%;
+            background:blueviolet;
+            position:relative;
+            -webkit-animation-name:mymove;
+            -webkit-animation-duration:2s;
+            animation-timing-function: ease-in;
+            animation-iteration-count: infinite;
+            animation-direction:alternate;
+
+        }
+        @-webkit-keyframes mymove{
+            from{top:0;}
+            to{top:200px;}
+        }
+    </style>
+</head>
+<body>
+<div></div>
+</body>
+</html>

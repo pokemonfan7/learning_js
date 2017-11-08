@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width:100px;
+            height:100px;
+            background:brown;
+            margin:10px;
+            opacity:0.3;
+        }
+    </style>
+    <script>
+        window.onload=function()
+        {
+            var aDiv=document.getElementsByTagName('div');
+            for(var i=0;i<aDiv.length;i++)
+            {
+                //属性与对象绑定：速度或其他属性，如透明度
+                aDiv[i].alpha=30;
+                aDiv[i].onmouseover=function()
+                {
+                    toMove(this,100);
+                };
+                aDiv[i].onmouseout=function()
+                {
+                    toMove(this,30);
+                };
+            }
+        };
+
+        function toMove(obj,iTarget)
+        {
+            clearInterval(obj.timer);
+            obj.timer=setInterval(function(){
+                var iSpeed=(iTarget-obj.alpha)/8;
+                iSpeed=iSpeed>0?Math.ceil(iSpeed):Math.floor(iSpeed);
+                if(obj.alpha===iTarget)
+                {
+                    clearInterval(obj.timer);
+                }
+                else
+                {
+                    obj.alpha+=iSpeed;
+                    obj.style.opacity=obj.alpha/100;
+                }
+            },30);
+        }
+
+    </script>
+</head>
+<body>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+</body>
+</html>

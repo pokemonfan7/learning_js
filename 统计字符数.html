@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>统计字符</title>
+    <script>
+        //字符串
+        /*var str1="qwekljb235735623453456avppipbspdv";
+        function getmaxstr(str)
+        {
+            if(str.length===1)
+            {
+                return str;
+            }
+            var arr=[];
+            for(var i=0;i<str.length;i++)
+            {
+                if(!arr[str.charAt(i)])
+                {
+                    arr[str.charAt(i)]=1;
+                }
+                else
+                {
+                    arr[str.charAt(i)]+=1;
+                }
+            }
+            var max=1;
+            var maxkey='';
+            for(var z in arr)
+            {
+                if(max<arr[z])
+                {
+                    max=arr[z];
+                    maxkey=z;
+                }
+            }
+            alert(maxkey+"   "+max);
+        }
+        getmaxstr(str1);*/
+
+
+
+        //数组
+        var arr1=["a","b","b","c"];
+        Array.prototype.diaohuan=function(arr)
+        {
+            var newarr=[];
+            for(var i=0;i<this.length;i++)
+            {
+                if(!newarr[this[i]])
+                {
+                    newarr[this[i]]=1;
+                }
+                else
+                {
+                    newarr[this[i]]+=1;
+                }
+            }
+            console.log(newarr);
+            var maxvalue=1;
+            var maxkey="";
+            for(var k in newarr)
+            {
+                if(newarr[k]>maxvalue)
+                {
+                    maxvalue=newarr[k];
+                    maxkey=k;
+                }
+            }
+            alert(maxkey+"   "+maxvalue);
+        };
+
+       arr1.diaohuan();
+
+    </script>
+</head>
+<body>
+</body>
+</html>

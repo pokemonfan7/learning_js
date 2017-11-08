@@ -1,1 +1,1 @@
-# learning_js
+# learning_js 一些练习的项目
